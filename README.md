@@ -17,4 +17,21 @@
 
 🏗️ **SYSTEM ARCHITECTURE**
 
-![sys](https://github.com/user-attachments/assets/29376a20-febf-4874-846d-b88fa6d4791f)
+graph TD
+    A[🗂️ Raw Review Data<br/>(Amazon + ScoreShield)] --> B[🧹 Data Cleaning Layer]
+    
+    B --> C[😊 Sentiment Analysis Layer<br/>(VADER)]
+    C --> D[📈 Reviews with Sentiment Scores]
+    
+    D --> E[🕵️ Fake Review Detection Layer<br/>(XGBoost)]
+    E --> F[⚠️ Fake Probability<br/>+ Review Weight]
+    
+    F --> G[📊 Seller-Level Aggregation Layer]
+    
+    G --> H[📉 Bayesian Adjustment Layer]
+    H --> I[📐 Normalization Layer]
+    
+    I --> J[⭐ Digital Reputation Score (DRS)]
+    J --> K[🏷️ Reputation Classification<br/>(Low / Moderate / High)]
+    
+    K --> L[📤 Final Outputs<br/>(CSV / Analysis)]
