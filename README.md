@@ -17,16 +17,22 @@
 
 🏗️ System Architecture
 
-
-## 🏗️ Architecture
-
 ```
-React Frontend (3000)
-    ↓
-Auth Backend (5000) ← Email: obstructgamer@gmail.com
-    ↓
-MongoDB Atlas ← Auto-Sync
-    ↓
-AI Backend (8000)
+User / Review Dataset
+        ↓
+Data Cleaning & Preprocessing
+        ↓
+Sentiment Analysis (VADER)
+        ↓
+Fake Review Detection (XGBoost)
+        ↓
+Review Weighting Engine
+        ↓
+Seller-Level Aggregation
+        ↓
+Bayesian Adjustment
+        ↓
+Digital Reputation Score (DRS)
+        ↓
+Final Output (Scores + Labels)
 ```
-
