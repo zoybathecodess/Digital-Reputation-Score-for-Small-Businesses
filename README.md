@@ -19,7 +19,7 @@
 
 ```mermaid
 graph TD;
-  User / Review Dataset;
+        User;
           ↓
   Data Cleaning & Preprocessing;
           ↓
