@@ -19,9 +19,7 @@
 
 ```mermaid
 graph TD;
-        User;
-          ↓
-  Data Cleaning and  Preprocessing;
+        User --> Data Cleaning and  Preprocessing;
           ↓
   Sentiment Analysis (VADER);
           ↓
