@@ -19,8 +19,16 @@
 
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    A[User Input] --> B[Analysis Layer];
+
+    B --> C[Routing Layer];
+
+    D[Cost Optimizer] --> C;
+    E[Model Registry] --> C;
+    F[Failure Handler] --> C;
+
+    C --> G[Execution Layer];
+    G --> H[Synthesis Layer];
+
+    H --> I[Final Output];
 ```
