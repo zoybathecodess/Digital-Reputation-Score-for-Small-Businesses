@@ -15,23 +15,12 @@
 
 ----------------------------------------------------------------------------------------------
 
-🏗️ **SYSTEM ARCHITECTURE**
+🏗️ ## System Architecture
+
 ```mermaid
 graph TD
-    A[🗂️ Raw Review Data<br/>(Amazon + ScoreShield)] --> B[🧹 Data Cleaning Layer]
-    
-    B --> C[😊 Sentiment Analysis Layer<br/>(VADER)]
-    C --> D[📈 Reviews with Sentiment Scores]
-    
-    D --> E[🕵️ Fake Review Detection Layer<br/>(XGBoost)]
-    E --> F[⚠️ Fake Probability<br/>+ Review Weight]
-    
-    F --> G[📊 Seller-Level Aggregation Layer]
-    
-    G --> H[📉 Bayesian Adjustment Layer]
-    H --> I[📐 Normalization Layer]
-    
-    I --> J[⭐ Digital Reputation Score (DRS)]
-    J --> K[🏷️ Reputation Classification<br/>(Low / Moderate / High)]
-    
-    K --> L[📤 Final Outputs<br/>(CSV / Analysis)]
+    A[Raw Review Data] --> B[Data Cleaning]
+    B --> C[Sentiment Analysis]
+    C --> D[Fake Review Detection]
+    D --> E[DRS Calculation]
+    E --> F[Final Output]
