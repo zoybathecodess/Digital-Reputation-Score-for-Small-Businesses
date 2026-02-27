@@ -18,21 +18,22 @@
 🏗️ System Architecture
 
 ```mermaid
- User / Review Dataset
-        ↓
-Data Cleaning & Preprocessing
-        ↓
-Sentiment Analysis (VADER)
-        ↓
-Fake Review Detection (XGBoost)
-        ↓
-Review Weighting Engine
-        ↓
-Seller-Level Aggregation
-        ↓
-Bayesian Adjustment
-        ↓
-Digital Reputation Score (DRS)
-        ↓
-Final Output (Scores + Labels)
+graph TD;
+  User / Review Dataset;
+          ↓
+  Data Cleaning & Preprocessing;
+          ↓
+  Sentiment Analysis (VADER);
+          ↓
+  Fake Review Detection (XGBoost);
+          ↓
+  Review Weighting Engine;
+          ↓
+  Seller-Level Aggregation;
+          ↓
+  Bayesian Adjustment;
+          ↓
+  Digital Reputation Score (DRS);
+          ↓
+  Final Output (Scores + Labels);
 ```
