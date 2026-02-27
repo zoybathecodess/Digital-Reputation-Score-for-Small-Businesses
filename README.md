@@ -1,14 +1,13 @@
 # Digital-Reputation-Score-for-Small-Businesses
-🧩 Problem Statement
+🧩 **Overview**
 
-Online marketplaces heavily rely on customer reviews and ratings to build trust and influence purchasing decisions. However, these review-based reputation systems are increasingly vulnerable to fake, manipulated, or misleading reviews. This problem disproportionately affects small businesses, which typically have limited review volume and are more susceptible to reputation distortion caused by a small number of fake or extreme reviews.
-Traditional reputation systems rely primarily on average star ratings, ignoring:
-- the emotional tone of the review text,
-- the authenticity of reviews,
-- the confidence level associated with low review counts.
+  This project implements an AI-powered Digital Reputation Scoring (DRS) system designed to provide a fair and trustworthy evaluation of online sellers, with a focus on small businesses. 
+  Traditional reputation systems rely heavily on average star ratings, making them vulnerable to fake or misleading reviews and disproportionately harmful to sellers with limited review volume. 
+  To address this, the system combines:
+  - sentiment analysis of review text
+  - XGBoost-based fake review detection model that assigns a fraud probability to each review using behavioral, textual, and metadata features.
+  Instead of removing suspicious reviews, their influence is reduced through probability-based weighting. Weighted ratings and sentiment are then aggregated at the seller level, normalized, and adjusted using Bayesian confidence modeling to account for low review counts.
+**The final Digital Reputation Score integrates _review quality, emotional sentiment, authenticity, and confidence**_, resulting in an explainable, manipulation-resistant reputation framework that improves trust for both consumers and online marketplaces.
 
-As a result, customers may be misled, trustworthy small sellers may be unfairly penalized, and platforms struggle to maintain reliable reputation signals.
-The challenge is to design an AI-driven, fair, and explainable digital reputation system that:
-- detects and reduces the impact of fake reviews,
-- incorporates both numerical ratings and textual sentiment,
-- and fairly evaluates small businesses despite limited data.
+----------------------------------------------------------------------------------------------
+
