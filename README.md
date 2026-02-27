@@ -18,8 +18,7 @@
 🏗️ System Architecture
 
 ```mermaid
-User / Review Dataset
-        ↓
+
 Data Cleaning & Preprocessing
         ↓
 Sentiment Analysis (VADER)
