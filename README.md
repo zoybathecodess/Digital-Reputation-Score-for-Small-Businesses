@@ -16,7 +16,7 @@
 ----------------------------------------------------------------------------------------------
 
 🏗️ **SYSTEM ARCHITECTURE**
-
+```mermaid
 graph TD
     A[🗂️ Raw Review Data<br/>(Amazon + ScoreShield)] --> B[🧹 Data Cleaning Layer]
     
