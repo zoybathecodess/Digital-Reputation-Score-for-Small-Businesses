@@ -15,12 +15,9 @@
 
 ----------------------------------------------------------------------------------------------
 
-🏗️ ## System Architecture
+🏗️ System Architecture
 
 ```mermaid
 graph TD
-    A[Raw Review Data] --> B[Data Cleaning]
-    B --> C[Sentiment Analysis]
-    C --> D[Fake Review Detection]
-    D --> E[DRS Calculation]
-    E --> F[Final Output]
+A --> B
+B --> C
