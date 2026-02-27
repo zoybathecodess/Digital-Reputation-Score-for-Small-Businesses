@@ -17,7 +17,73 @@
 
 🏗️ System Architecture
 
-```mermaid
-graph TD
-A --> B
-B --> C
+User / Dataset Input
+(reviews, ratings, metadata)
+        |
+        v
++----------------------------+
+| Data Cleaning & Validation |
+| - Remove nulls             |
+| - Fix datatypes            |
+| - Normalize text           |
++----------------------------+
+        |
+        v
++----------------------------+        +-----------------------------+
+| Sentiment Analysis Layer   | -----> | Sentiment Score             |
+| (VADER)                    |        | (-1 to +1 polarity)         |
++----------------------------+        +-----------------------------+
+        |
+        v
++----------------------------+        +-----------------------------+
+| Fake Review Detection      | -----> | Fake Probability            |
+| (XGBoost Classifier)       |        | + Review Weight             |
++----------------------------+        +-----------------------------+
+        |
+        v
++----------------------------+
+| Review Weighting Engine    |
+| Genuine reviews ↑ weight  |
+| Suspicious reviews ↓ weight|
++----------------------------+
+        |
+        v
++--------------------------------------------------+
+| Seller-Level Aggregation                          |
+| - Weighted average rating                         |
+| - Weighted average sentiment                      |
+| - Review count                                   |
+| - Fake review ratio                               |
++--------------------------------------------------+
+        |
+        v
++----------------------------+        +-----------------------------+
+| Bayesian Adjustment Layer  | -----> | Confidence-Aware Rating     |
+| (Low-review correction)    |        | (Fair for small sellers)   |
++----------------------------+        +-----------------------------+
+        |
+        v
++----------------------------+
+| Feature Normalization      |
+| (Scale all signals to 0–1) |
++----------------------------+
+        |
+        v
++--------------------------------------------------+
+| Digital Reputation Score (DRS Engine)             |
+| Weighted combination of:                          |
+| - Bayesian rating                                 |
+| - Sentiment quality                               |
+| - Authenticity score                              |
+| - Review volume confidence                        |
++--------------------------------------------------+
+        |
+        v
++----------------------------+
+| Reputation Classification |
+| Low / Moderate / High      |
++----------------------------+
+        |
+        v
+Final Output
+(DRS Score, Label, Reports)
