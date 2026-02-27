@@ -18,4 +18,3 @@
 🏗️ **SYSTEM ARCHITECTURE**
 
 ![sys](https://github.com/user-attachments/assets/29376a20-febf-4874-846d-b88fa6d4791f)
-![sys](https://github.com/user-attachments/assets/29376a20-febf-4874-846d-b88fa6d4791f)
