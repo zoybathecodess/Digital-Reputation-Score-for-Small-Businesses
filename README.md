@@ -19,19 +19,8 @@
 
 ```mermaid
 graph TD;
-        User --> Data Cleaning and  Preprocessing;
-          ↓
-  Sentiment Analysis (VADER);
-          ↓
-  Fake Review Detection (XGBoost);
-          ↓
-  Review Weighting Engine;
-          ↓
-  Seller Level Aggregation;
-          ↓
-  Bayesian Adjustment;
-          ↓
-  Digital Reputation Score (DRS);
-          ↓
-  Final Output (Scores and Labels);
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 ```
