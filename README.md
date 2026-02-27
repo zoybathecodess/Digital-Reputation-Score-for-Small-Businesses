@@ -21,7 +21,7 @@
 graph TD;
         User;
           ↓
-  Data Cleaning & Preprocessing;
+  Data Cleaning and  Preprocessing;
           ↓
   Sentiment Analysis (VADER);
           ↓
@@ -29,11 +29,11 @@ graph TD;
           ↓
   Review Weighting Engine;
           ↓
-  Seller-Level Aggregation;
+  Seller Level Aggregation;
           ↓
   Bayesian Adjustment;
           ↓
   Digital Reputation Score (DRS);
           ↓
-  Final Output (Scores + Labels);
+  Final Output (Scores and Labels);
 ```
