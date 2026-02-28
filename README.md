@@ -19,9 +19,13 @@
 
 ```mermaid
 graph TD;
-    A[User Input] --> B[Analysis Layer];
+    A[User Input(Reviews, Ratings, Meta)] --> B[Analysis Layer];
 
-    B --> C[Routing Layer];
+    B --> C[ Data Cleaning &           
+| Preprocessing             |
+| - Remove nulls            |
+| - Fix datatypes           |
+| - Text normalization   ];
 
     D[Cost Optimizer] --> C;
     E[Model Registry] --> C;
@@ -32,3 +36,5 @@ graph TD;
 
     H --> I[Final Output];
 ```
+-----------------------------------------------------------------------------------------------
+
