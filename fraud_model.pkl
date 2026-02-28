@@ -1,0 +1,1 @@
+# Placeholder for the trained fraud model - will be created when training script runs
