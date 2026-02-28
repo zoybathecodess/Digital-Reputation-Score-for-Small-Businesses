@@ -19,22 +19,33 @@
 
 ```mermaid
 graph TD;
-    A[User Input (Reviews, Ratings, Meta) ] --> B[Analysis Layer];
-
-    B --> C[ Data Cleaning &           
+    A[User Input] --> B[ Data Cleaning &           
  Preprocessing             
  - Remove nulls            
  - Fix datatypes           
- - Text normalization   ];
+ - Text normalization];
 
-    D[Cost Optimizer] --> C;
-    E[Model Registry] --> C;
-    F[Failure Handler] --> C;
+    B --> C[Sentiment Analysis VADER] ;
+    C --> E[Sentiment Score -1 to +1 polarity] ;
+    C --> F[Fake Review Detection XGB];
 
-    C --> G[Execution Layer];
-    G --> H[Synthesis Layer];
+    F --> G[Fake Probability + Review Weight];
+    F --> H[Seller-Level Aggregation:  
+ - Weighted avg rating  
+ - Weighted avg sentiment  
+ - Review count  
+ - Fake review ratio];
+    
 
-    H --> I[Final Output];
+    H --> I[Bayesian Adjustment small seller correction];
+    I --> J[Feature Normalization Scale features 0-1];
+    J --> K[Digital Reputation Score Engine DRS           
+ Combines:                                      
+ - Bayesian rating                              
+ - Sentiment quality                            
+ - Authenticity score                           
+ - Review volume confidence  ];
+
 ```
 -----------------------------------------------------------------------------------------------
 
